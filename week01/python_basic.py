@@ -204,5 +204,54 @@ print(list(dic.keys()))
 for key in dic.keys():
   print(dic[key])
 
+# value의 리스트 만들기
+print(dic.values())
+print(list(dic.values()))
+
+# key, value 쌍 구하기
+print(dic.items())
+
+for key, value in dic.items():
+  print(key + ":" + value)
+
+# 원소 삭제
+dic.clear()
+print(dic)
+
+# 집합 만들기
+s1 ={1, 2, 'a' ,5}
+s2 = set([1, 2, 3, 4, 5, 6])
+print(s2)
+s3 =set([4, 5, 6, 7, 8, 9])
+print(s3)
+
+# 교집합 연산
+print(s2 & s3)
+print(s2.intersection(s3))
+
+# 합집합 연산
+print(s2 | s3)
+print(s2.union(s3))
+
+# 차집합 연산
+print(s2 - s3)
+print(s3 - s2)
+print(s2.difference(s3))
+print(s3.difference(s2))
+
+# 원소 한 개 추기
+s2.add(7)
+print(s2)
+
+# 원소 여러 개 추기
+s2.update([6, 7, 8, 9, 10])
+print(s2)
+
+# 특정 원소 제거
+s2.remove(7)
+print(s2)
+
+s2 = set([1, 2, 3, 4, 5, 6, 3, 1, 6])
+
 
 
