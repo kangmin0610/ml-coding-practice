@@ -25,3 +25,12 @@ tail = "is fun"
 print(head +tail)
 
 #문자열 곱하기 
+print(head * 2)
+print("=" * 5)
+
+#문자열 인덱싱 
+a = "Now is better than never"
+print(a[0])
+print(a[4])
+print(a[-1])
+print(a[-2])
