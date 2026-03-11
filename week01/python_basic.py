@@ -450,7 +450,10 @@ f = open('example.txt', 'r')
 lines = f.readlines()
 print(lines)
 
-for line 
+for line in lines:
+  print(line)
+
+f.close()
 
 
 
