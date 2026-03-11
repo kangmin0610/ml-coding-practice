@@ -256,7 +256,7 @@ print(s2)
 
 # 비교 연산자
 x = 3
-x = 2
+y = 2
 print(x == y)
 print(x != y)
 print(x >= y)
