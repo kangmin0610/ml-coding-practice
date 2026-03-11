@@ -317,6 +317,19 @@ def sum2(*args):
 # 함수 호출
 a = 5
 b = 3
+print(sum1(a, b))
+print(sum1(3, 5))
+print(sum2(1, 2, 3, 4, 5))
+print(sum2(2, 3.5, 10))
+
+"""## 내장 함수"""
+
+# 숫자 x의 절대값을 변환
+print(abs(-3,5))
+
+# 그룹 자료형의 변수 x의 모든 원소가 참(0이 아닌 값)이면 True 반환
+print(all([1, 2, 3, 4]))
+print(4, -2, 0.0, 4)
 
 
 
