@@ -106,4 +106,14 @@ print(iris.groupby('class').std())
 
 print(iris.drop('class', axis=1).agg(['sum','mean', 'std']))
 
-# print(iros.agg(['sum','mean', 'std']))
+# print(iros.agg(['sum','mean', 'std']))    # class 컬럼으로 인해 에러
+
+
+print(iris['class'].unique())
+print(iris['class'].nunique())
+print(iris['class'].value_counts())
+
+# 예제 데이터 생성
+data = {
+    
+}
