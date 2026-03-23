@@ -137,7 +137,7 @@ for i, value in enumerate(survived_counts):
 ## 히트맵 : 두 변수의 상관 관계를 표시하기**
 
 # 결측치 처리
-titnaic = titanic.dropna(subset=['Age', 'Fare'])
+titanic = titanic.dropna(subset=['Age', 'Fare'])
 
 # 상관 행렬 계산
 correlation_matrix = titanic.drop('PassengerId', axis=1).corr(numeric_only=True)
@@ -158,7 +158,7 @@ plt.close()
 ## **영역 채우기 그래프 : 나이대별 생존자와 사망자 수 표현하기**
 
 # 결측치 처리
-titnaic = titnaic.dropna(subset=['Age', 'Fare'])
+titanic = titanic.dropna(subset=['Age', 'Fare'])
 
 # 나이대별 생존자와 사망자 수 계산하기 위해 범주형 변수로 변환
 age_groups = pd.cut(titanic['Age'], bins=range(0, 81, 5))
@@ -190,13 +190,13 @@ plt.close()
 ## **박스 플롯 : 승객 나이의 데이터 분포, 중앙값, 이상치 살펴보기**
 
 # 결측치 처리
-titnaic =titnaic.dropna(subset=['Age'])
-print(titnaic.info())
+titanic =titanic.dropna(subset=['Age'])
+print(titanic.info())
 
 # 승객 등급에 따른 나이의 박스 플롯
-plt.boxplot([titnaic[titnaic['Pclass'] == 1]['Age'],
-             titnaic[titnaic['Pclass'] == 2]['Age'],
-             titnaic[titnaic['Pclass'] == 3]['Age']],
+plt.boxplot([titanic[titanic['Pclass'] == 1]['Age'],
+             titanic[titanic['Pclass'] == 2]['Age'],
+             titanic[titanic['Pclass'] == 3]['Age']],
             labels=['1st Class', '2nd Class', '3rd Class'])
 
 plt.tilte('Box Plot for Age by Pclass')
@@ -208,8 +208,8 @@ plt.close()
 """### **바이올린 플롯 : 승객 등급에 따른 나이 분포 표시하기**"""
 
 # 결측치 처리
-titanic['Age'] = titnaic['Age'].fillna(titnaic['Age'].mean())
-print(titnaic.info())
+titanic['Age'] = titanic['Age'].fillna(titanic['Age'].mean())
+print(titanic.info())
 
 # 바이올린 플롯 그리기
 plt.figure(figsize=(10, 6))
@@ -217,4 +217,4 @@ plt.figure(figsize=(10, 6))
 # showmeans=False는 평균값을 표시하지 않도록 하고, showmedians=True는 중앙값을 표시하도록 함
 violin_plot = plt.violinplot([titanic[titanic['Pclass'] ==1]['Age'],
                               titanic[titanic['Pclass'] ==2]['Age'],
-                              titnaic])
+                              titanic])
