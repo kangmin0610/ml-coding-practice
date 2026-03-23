@@ -107,4 +107,5 @@ for i, value in enumerate(survived_counts):
 
   # 파이 차트 그리기
   plt.figure(figsize=(8, 8))
-  plt.pie(survived_counts, label=['Not Survived', 'Survived'], colors=['orange', 'gold']),
+  plt.pie(survived_counts, label=['Not Survived', 'Survived'], colors=['orange', 'gold'],
+          )
