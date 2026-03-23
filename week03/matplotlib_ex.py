@@ -199,4 +199,7 @@ plt.boxplot([titnaic[titnaic['Pclass'] == 1]['Age'],
              titnaic[titnaic['Pclass'] == 3]['Age']],
             labels=['1st Class', '2nd Class', '3rd Class'])
 
-
+plt.tilte('Box Plot for Age by Pclass')
+plt.xlabel('Pclass')
+plt.ylabel('Age')
+plt.savefig('Figure09.png')
