@@ -67,4 +67,7 @@ bars = plt.barh(survived_counts.index, survived_counts, color=['darkturquoise', 
 plt.title('Survived Counts by Gender on Titanic')
 plt.xlabel('Count')
 plt.ylabel('Gender')
-plt.legend(bars, ['Survived = Female', 'Survived - Male'], loc=)
+plt.legend(bars, ['Survived = Female', 'Survived - Male'], loc='upper right')
+
+# 차이 강조를 위해 수펴선 추가
+plt.axvline(x=survived_counts['male'], color='gray', linestyle='--', linewidth=1)
