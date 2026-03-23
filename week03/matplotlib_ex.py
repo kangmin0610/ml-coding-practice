@@ -369,4 +369,13 @@ parch_counts =titanic.groupby('Parch')['Survived'].value_counts().unstack().fill
 print(parch_counts)
 
 # x, y값 설정
-x= 
+x = parch_counts.index.astype(str) #데이터프레임의 인덱스를 문자열 변환
+y1 = parch_counts[0].values # 사망자
+y2 = parch_counts[1].values # 생존자
+
+# plt.subplots() 함수를 사용하여 그래프 생성
+# figure와 서브플롯 생성
+fig, ax1 =plt.subplots()
+
+# 첫 번째 그래프 설정 (선 그래프)
+ax1.plot(x, y1, '-s', color='indigo', markersize=7, linewidth=5, alpha)
