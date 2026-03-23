@@ -96,4 +96,14 @@ for i, value in enumerate(survived_counts):
   plt.ylabel('Fare')
   plt.legend(handles=scatter.legend_elements()[0], title='Survived',
              labels=['Not Survived', 'Survived'], loc='upper right')
+  plt.savefig('Figure04.png')
+  plt.close()
+
+  """### **파이 차트 : 생존자, 사망자 비율 표현하기**"""
+
+  # 사망자와 생존자의 수 계산
+  survived_counts = titanic['Survived'].value_counts()
+  print(survived_counts)
+
+  # 파이 차트 그리기
   
