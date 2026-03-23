@@ -129,4 +129,4 @@ for i, value in enumerate(survived_counts):
 
   plt.xlabel('Age')
   plt.ylabel('Count')
-  plt.title('Distro')
+  plt.title('Distribution of Ages on the Titanic')
