@@ -177,3 +177,24 @@ plt.fill_between(survived_counts.index.astype(str), survived_counts[1],
 # 나이대별 사망자
 plt.fill_between(survived_counts.index.astype(str), survived_counts[0],
                  color='hotpink', alpha=0.6, label='Not Survived')
+
+plt.title('Survival by Age Group on Titanic')
+plt.xlabel('Age')
+plt.ylabel('Count')
+plt.xticks(rotation=45)
+plt.legend()
+plt.grid(True)
+plt.savefig('Figure08.png')
+plt.close()
+
+## **박스 플롯 : 승객 나이의 데이터 분포, 중앙값, 이상치 살펴보기**
+
+# 결측치 처리
+titnaic =titnaic.dropna(subset=['Age'])
+print(titnaic.info())
+
+# 승객 등급에 따른 나이의 박스 플롯
+plt.boxplot([titnaic[titnaic['Pclass'] == 1]['Age'],
+             titnaic[titnaic['Pclass'] == 2]['Age'],
+             titnaic[titnaic['Pclass'] == 3]['Age']],
+            labels)
