@@ -91,4 +91,7 @@ for i, value in enumerate(survived_counts):
   plt.figure(figsize=(12, 8))
   scatter = plt.scatter(x='Age', y='Fare', data=titanic, c=titanic['Survived'],cmap='Set2', alpha=0.7)
 
-  plt.title('Age and Fare Relationship')
+  plt.title('Age and Fare Relationship with Survival on the Titanic')
+  plt.xlabel('Age')
+  plt.ylabel('Fare')
+  plt.legend(handles=scatter.legend_elements()[0], title='Survived',)
