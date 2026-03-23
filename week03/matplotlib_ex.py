@@ -197,4 +197,4 @@ print(titnaic.info())
 plt.boxplot([titnaic[titnaic['Pclass'] == 1]['Age'],
              titnaic[titnaic['Pclass'] == 2]['Age'],
              titnaic[titnaic['Pclass'] == 3]['Age']],
-            labels)
+            labels=['1st Class', '2nd Class', '3rd Class'])
