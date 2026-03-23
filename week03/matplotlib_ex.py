@@ -1,4 +1,4 @@
-# -*- coding: uft-8 -*-
+# -*- coding: utf-8 -*-
 # 타이타닉 데이터셋 불러오기
 import pandas as pd
 
@@ -69,70 +69,70 @@ plt.xlabel('Count')
 plt.ylabel('Gender')
 plt.legend(bars, ['Survived = Female', 'Survived - Male'], loc='upper right')
 
-# 차이 강조를 위해 수펴선 추가
+# 차이 강조를 위해 수평선 추가
 plt.axvline(x=survived_counts['male'], color='gray', linestyle='--', linewidth=1)
 
 #생존자 수 표시
 for i, value in enumerate(survived_counts):
   plt.text(value + 1, i, str(value), ha='left', va='center')
 
-  plt.savefig('Figure03.png')
-  plt.close()
+plt.savefig('Figure03.png')
+plt.close()
 
-  """### **산점도 그래프 : 나이와 요금, 생존 여부 확인하기**"""
+"""### **산점도 그래프 : 나이와 요금, 생존 여부 확인하기**"""
 
-  print(titanic.info, '\n')
+print(titanic.info, '\n')
 
-  # 결측치 처리
-  titanic = titanic.dropna(subset=['Age', 'Fare', 'Survived'])
-  print(titanic.info())
+# 결측치 처리
+titanic = titanic.dropna(subset=['Age', 'Fare', 'Survived'])
+print(titanic.info())
 
-  # 산점도 그래프 그리기
-  plt.figure(figsize=(12, 8))
-  scatter = plt.scatter(x='Age', y='Fare', data=titanic, c=titanic['Survived'],cmap='Set2', alpha=0.7)
+# 산점도 그래프 그리기
+plt.figure(figsize=(12, 8))
+scatter = plt.scatter(x='Age', y='Fare', data=titanic, c=titanic['Survived'],cmap='Set2', alpha=0.7)
 
-  plt.title('Age and Fare Relationship with Survival on the Titanic')
-  plt.xlabel('Age')
-  plt.ylabel('Fare')
-  plt.legend(handles=scatter.legend_elements()[0], title='Survived',
+plt.title('Age and Fare Relationship with Survival on the Titanic')
+plt.xlabel('Age')
+plt.ylabel('Fare')
+plt.legend(handles=scatter.legend_elements()[0], title='Survived',
              labels=['Not Survived', 'Survived'], loc='upper right')
-  plt.savefig('Figure04.png')
-  plt.close()
+plt.savefig('Figure04.png')
+plt.close()
 
-  """### **파이 차트 : 생존자, 사망자 비율 표현하기**"""
+"""### **파이 차트 : 생존자, 사망자 비율 표현하기**"""
 
-  # 사망자와 생존자의 수 계산
-  survived_counts = titanic['Survived'].value_counts()
-  print(survived_counts)
+# 사망자와 생존자의 수 계산
+survived_counts = titanic['Survived'].value_counts()
+print(survived_counts)
 
-  # 파이 차트 그리기
-  plt.figure(figsize=(8, 8))
-  plt.pie(survived_counts, label=['Not Survived', 'Survived'], colors=['orange', 'gold'],
-          autopct='%0.1f%%', startangle=90, shadow=True, explode=(0, 0.1))
+# 파이 차트 그리기
+plt.figure(figsize=(8, 8))
+plt.pie(survived_counts, labels=['Not Survived', 'Survived'], colors=['orange', 'gold'],
+        autopct='%0.1f%%', startangle=90, shadow=True, explode=(0, 0.1))
   
-  plt.title('Survival Distribution on the Titanic')
-  plt.savefig('Figure05.png')
-  plt.close()
+plt.title('Survival Distribution on the Titanic')
+plt.savefig('Figure05.png')
+plt.close()
 
-  """### **히스토그램 : 승객의 나이 분포 표시하기**"""
+"""### **히스토그램 : 승객의 나이 분포 표시하기**"""
 
-  # 처리 전
-  print(titanic.info(), '\n')
+# 처리 전
+print(titanic.info(), '\n')
 
-  # 나이 결측치 처리 후 
-  titanic = titanic.dropna(subset=['Age'])
-  print(titanic.info())
+# 나이 결측치 처리 후 
+titanic = titanic.dropna(subset=['Age'])
+print(titanic.info())
 
-  # 히스토그램 그리기
-  plt.figure(figsize=(10, 6))
-  plt.hist(titanic['Age'], bins=20, color='seagreen', edgecolor='black')
+# 히스토그램 그리기
+plt.figure(figsize=(10, 6))
+plt.hist(titanic['Age'], bins=20, color='seagreen', edgecolor='black')
 
-  plt.xlabel('Age')
-  plt.ylabel('Count')
-  plt.title('Distribution of Ages on the Titanic')
-  plt.grid(axis='y', linestyle='--', alpha=0.7)
-  plt.savefig('Figure06.png')
-  plt.close()
+plt.xlabel('Age')
+plt.ylabel('Count')
+plt.title('Distribution of Ages on the Titanic')
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.savefig('Figure06.png')
+plt.close()
 
 ## 히트맵 : 두 변수의 상관 관계를 표시하기**
 
