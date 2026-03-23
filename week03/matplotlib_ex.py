@@ -151,3 +151,5 @@ plt.colorbar()
 plt.xticks(range(len(correlation_matrix.columns)), correlation_matrix.columns, rotation=45)
 plt.yticks(range(len(correlation_matrix.columns)), correlation_matrix.columns)
 
+plt.title('Correlation Heatmap of Titanic')
+plt.savefig('Figure')
