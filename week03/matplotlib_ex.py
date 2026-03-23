@@ -164,4 +164,7 @@ titnaic = titnaic.dropna(subset=['Age', 'Fare'])
 age_groups = pd.cut(titanic['Age'], bins=range(0, 81, 5))
 
 # Age, Survived 기준으로 그룹화 
-survived_counts = titanic.gruopby([age_groups, 'Survived'], observed=False).size().unstack().
+survived_counts = titanic.groupby([age_groups, 'Survived'], observed=False).size().unstack().fillna(0)
+print(survived_counts)
+
+#ㅔ
