@@ -10,12 +10,12 @@ import urllib.request
 def load_housing_data():
     tarball_path =Path("datasets/housing.tgz")
     if not tarball_path.is_file():
-        Path("datasets").mkdif(parents=True, exist_ok=True)
+        Path("datasets").mkdir(parents=True, exist_ok=True)
         url = "https://github.com/ageron/data/raw/main/housing.tgz"
         urllib.request.urlretrieve(url, tarball_path)
         with tarfile.open(tarball_path) as housing_tarball:
             housing_tarball.extractall(path="datasets")
-    return pd.read_Csv(Path("datasets/housing/housing.csv"))
+    return pd.read_csv(Path("datasets/housing/housing.csv"))
 
 housing = load_housing_data()
 
@@ -57,7 +57,7 @@ housing_num.head()
 imputer.fit(housing_num)
 
 print(imputer.statistics_)          # imputer 결과 값
-print(housing_num.median().value)   # 수동으로 계산한 중간값
+print(housing_num.median().values)   # 수동으로 계산한 중간값
 
 # 훈련 세트의 누락값을 imputer가 학습한 값으로 채우기
 X = imputer.transform(housing_num)
