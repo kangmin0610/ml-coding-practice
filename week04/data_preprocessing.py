@@ -64,4 +64,20 @@ X = imputer.transform(housing_num)
 
 imputer.feature_names_in_
 
-housing
+housing_tr = pd.DataFrame(X, columns=housing_num.columns,
+                          index=housing_num.index)
+housing_tr.loc[null_rows_idx].head()
+
+# 이상치 삭제
+from sklearn.ensemble import IsolationForest
+
+isolation_forest = IsolationForest(random_state=42)
+outlier_pred = isolation_forest.fit_predict(X)
+
+outlier_pred
+
+housing = housing.iloc[outlier_pred == 1]
+housing_labels = housing_labels.iloc[outlier_pred == 1]
+
+# 텍스트와 범주형 특성 다루기
+housing_cat = housing[["ocean_proximity"]]
