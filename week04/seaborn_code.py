@@ -63,3 +63,22 @@ fig.suptitle('Scatter Plots with Regression Lines, fontsize=16')
 ax1.set_title('fit_reg = True')
 ax2.set_title('fit_reg = False')
 plt.savefig('./week04/Seaborn_Figure03.jpg')
+
+# **히스토그램과 커널 밀도 추정 그래프**
+# 히스토그램과 커널 밀도 추정 그래프 함께 그리기
+sns.histplot(tips['tip'], bins=30, kde=True, color='skyblue')
+
+plt.title('Histogram with KDE for Tips')
+plt.savefig('./week04/Seaborn_Figure04.jpg')
+
+# **조인트 그래프**
+# jointplot( ) 그리기
+sns.jointplot(x='size', y='tip', data=tips, kind='scatter')
+plt.savefig('./week04/Seaborn_Figure05.jpg')
+
+# **관계 그래프**
+# pairplot( ) 그리기
+sns.pairplot(data=tips, hue='sex', diag_kind='hist', palette='husl')
+
+plt.suptitle('Pairplot with Histograms by Gender', y=1.05)
+plt.savefig('./week04/Seaborn_Figure06.jpg')
