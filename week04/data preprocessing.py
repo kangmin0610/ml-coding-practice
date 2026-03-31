@@ -39,4 +39,22 @@ for set_ in (strat_train_set, strat_test_set):
 """
 
 housing = strat_train_set.drop("median_house_value", axis=1)
-housing_labels = strat_train_set["median_house_value"]
+housing_labels = strat_train_set["median_house_value"].copy()
+
+# 데이터 정제
+# null 값이 있는 행 확인하기
+null_rows_idx = housing.isnull().any(axis=1)
+housing.loc[null_rows_idx].head()
+
+from sklearn.impute import SimpleImputer
+
+imputer = SimpleImputer(strategy="median")
+
+# 수치형 특성만 추출
+housing_num = housing.select_dtypes(include=[np.number])
+housing_num.head()
+
+imputer.fit(housing_num)
+
+print(imputer.statistics_)
+print(housing_num.median().value)
