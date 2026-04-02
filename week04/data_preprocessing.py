@@ -38,4 +38,13 @@ from sklearn.impute import SimpleImputer
 imputer = SimpleImputer(strategy="median")
 
 # 수치형 특성만 추출
-housing_num = housing.select_dtypes
+housing_num = housing.select_dtypes(include=[np.number])
+housing_num.head()
+
+imputer.fit(housing_num)
+
+print(imputer.statistics_)           # imputer 결과 값
+print(housing_num.median().values)   # 수동으로 계산한 중간값
+
+# 훈련 세트의 누락값을 imputer가 학습한 값으로 채우기
+X = imputer.transform(housing_num)
