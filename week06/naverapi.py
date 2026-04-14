@@ -68,4 +68,4 @@ def getRequestUrl(url):
         return None
     
 
-def getPostDate()
+def getPostData()
