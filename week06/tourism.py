@@ -62,4 +62,20 @@ def getTourismStatsItem(yyyymm, nat_cd, ed_cd):
   parameters = "?_type=json&serviceKey=" + ServiceKey       # 인증키
   parameters += "&YM=" + yyyymm
   parameters += "&NAT_CD=" + nat_cd
+  parameters += "&ED_CD" + ed_cd
+
+  url = service_url + parameters
+
+  responseDecode = getRequestUrl(url)                       #[CODE 1]
+
+  if (responseDecode == None):
+    return None
+  else:
+    return json.loads(responseDecode)
   
+"""### [CODE 1]"""
+
+def getRequestUrl(url):  #[CODE 1]
+  req = urllib.request.urlopen(req)
+  try:
+    response =
