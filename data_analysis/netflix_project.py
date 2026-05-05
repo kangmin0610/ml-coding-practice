@@ -187,5 +187,15 @@ sns.heatmap(netflix_age_country_unstack, cmap = cmap, linewidth=2.5, annot=True,
 
 plt.suptitle('Target ages proportion of total content by country',
              fontweight='bold', fontfamily='serif', fontsize=15)
-ptl.title('Here we see interesting differences between countries. Most shows in South Korea are targeted to adults, for instance.',
-          )
+plt.title('Here we see interesting differences between countries. Most shows in South Korea are targeted to adults, for instance.',
+          fontsize=12, fontfamily='serif')
+plt.show()
+
+# 넷플릭스 데이터의 description 열 이용한 워드 클라우드 생성
+
+# WordCloud : 워드 클라우드 생성에 필요한 모듈
+# Image : 워드 클라우드를 원하는 형태로 그리기 위해 그림을 불러오는 패키지
+from wordcloud import WordCloud
+from PIL import Image
+
+plt.figure(figsize=(15, 5))
