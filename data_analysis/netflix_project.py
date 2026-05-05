@@ -104,7 +104,7 @@ print(type_counts)
 # 5 x 5 크기의 플롯 만들기
 plt.figure(figsize=(5, 5))
 
-plt.pie(type_counts, labels=type_counts.index, autopct=='%0.f%%', startangle=100,
+plt.pie(type_counts, labels=type_counts.index, autopct='%0.f%%', startangle=100,
         explode=[0.05, 0.05], shadow=True, colors=['#b20710','#221f1f'])
 
 plt.suptitle('Movie & TV Show distribution', fontfamily='serif', fontsize=15, fontweight='bold')
@@ -117,3 +117,5 @@ netflix.head(3)
 genres = netflix['listed_in'].str.split(', ', expand=True).stack().value_counts()
 genres
 
+# [1단계] listed_in 열에 있는 장르를 쉼표로 분할하기
+# 예시) 인덱스 1의 listed_in 열 값 : International TV Shows, TV Dramas, TV Mysteries
