@@ -103,7 +103,7 @@ plt.show()
 from sklearn.linear_model import Ridge
 
 ridge_reg = Ridge(alpha=0.1, solver="cholesky")
-ridge_reg.fit(X. y)
+ridge_reg.fit(X, y)
 print(ridge_reg.predict([[1.5]]))
 
 sgd_reg = SGDRegressor(penalty="12", alpha=0.1 / m, tol=None,
