@@ -40,3 +40,17 @@ from sklearn.svm import SVC
 
 poly_kernel_svm_clf = make_pipeline(StandardScaler(),
                                     SVC(kernel="poly", degree=3, coef0=1, C=5))
+poly_kernel_svm_clf.fit(X, y)
+
+# SVM 회귀
+
+from sklearn.svm import LinearSVR
+
+# 이 세 줄은 간단한 선형 데이터셋을 생성합니다.
+np.random.seed(42)
+X = 2 * np.random.rand(50, 1)
+y = 4 + 3 * X[:, 0] + np.random.randn(50)
+
+svm_reg = make_pipeline(StandardScaler(),
+                        LinearSVR(epsilon=0.5, dual=True, random_state=42))
+
