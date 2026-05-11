@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # 세션 저장소에 업로드한 csv 파일을 읽어 변수에 할당
-netflix = pd.read_csv('data_analysis/netflix_titles.csv')
+netflix = pd.read_csv('netflix_titles.csv')
 netflix.head()
 
 # .columns : 열 이름 확인
@@ -87,7 +87,7 @@ import seaborn as sns
 netflix = pd.read_csv('netflix_preprocessed.csv')
 
 # 넷플릭스 브랜드 상징 색깔 시각화
-sns.palplot('#221f1f', '#b20710', '#e50914', '#f5f5f1')
+sns.palplot(['#221f1f', '#b20710', '#e50914', '#f5f5f1'])
 
 # 제목 정하기
 plt.title('Netflix brand palette', loc='left', fontfamily='serif', fontsize=15, y=1.2)
