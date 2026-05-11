@@ -74,4 +74,5 @@ X_new_poly = poly_features.transform(X_new)
 y_new = lin_reg.predict(X_new_poly)
 
 plt.figure(figsize=(6, 4))
-
+plt.plot(X, y, "b.")
+plt.plot(X_new, y_new, "r-", linewidth=2, label="Predictions")
