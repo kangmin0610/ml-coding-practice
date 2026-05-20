@@ -19,4 +19,4 @@ export_graphviz(
        filled=True
 )
 
-from 
+from graphviz import Source
