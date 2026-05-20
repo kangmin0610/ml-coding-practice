@@ -8,4 +8,10 @@ y_iris = iris.target
 tree_clf = DecisionTreeClassifier(max_depth=2, random_state=42)
 tree_clf.fit(X_iris, y_iris)
 
-from sklearn.tree import export_g
+from sklearn.tree import export_graphviz
+
+export_graphviz(
+       tree_clf,
+       out_file="iris_tree.dot",
+       
+)
